@@ -4,6 +4,7 @@ AllCops:
   Exclude:
     - "**/vendor/**/*"
     - "**/*.gemspec"
+    - "bin/**/*"
     - "spec/**"
   NewCops: enable
   TargetRubyVersion: 3.0.1
