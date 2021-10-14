@@ -5,6 +5,9 @@ AllCops:
     - "**/vendor/**/*"
     - "**/*.gemspec"
     - "bin/**/*"
+    - "config/environments/**/*"
+    - "config/initializers/devise.rb"
+    - "db/**/*"
     - "spec/**"
   NewCops: enable
   TargetRubyVersion: 3.0.1
