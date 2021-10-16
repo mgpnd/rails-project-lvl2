@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsProjectLvl2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= content_for?(:title) ? yield(:title) : "RailsProjectLvl2" %></title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "RailsProjectLvl2" %>">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,11 +14,15 @@
   </head>
 
   <body>
+    <%= render partial: 'layouts/header' %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render partial: 'shared/header' %>
-
-    <%= yield %>
+    <main role="main">
+      <div class="container">
+        <%= content_for?(:content) ? yield(:content) : yield %>
+      </div>
+    </main>
   </body>
 </html>
