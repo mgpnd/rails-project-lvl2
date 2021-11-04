@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'minitest/autorun'
 
 ENV['RAILS_ENV'] ||= 'test'
@@ -13,16 +14,20 @@ module ActiveSupport
 end
 
 DatabaseCleaner.strategy = :transaction
-class Minitest::Spec
-  before :each do
-    DatabaseCleaner.start
-  end
+module Minitest
+  class Spec
+    before :each do
+      DatabaseCleaner.start
+    end
 
-  after :each do
-    DatabaseCleaner.clean
+    after :each do
+      DatabaseCleaner.clean
+    end
   end
 end
 
-class ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
+module ActionDispatch
+  class IntegrationTest
+    include Devise::Test::IntegrationHelpers
+  end
 end
