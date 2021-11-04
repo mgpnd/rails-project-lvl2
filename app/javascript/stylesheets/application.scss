@@ -1,6 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
 
+.invalid-feedback {
+  display: block;
+}
+
 .container {
   margin-top: 20px;
 }

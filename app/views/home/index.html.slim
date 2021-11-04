@@ -1,0 +1,9 @@
+h1 Welcome to the Blog!
+
+- @posts.each do |post|
+  .card.mt-4.w-100
+    .card-body
+      h4.card-title= post.title
+      p.card-text= post.body
+    .card-footer
+      | #{post.created_at.strftime('%d.%m.%Y %H:%M')} #{post.creator.email}
