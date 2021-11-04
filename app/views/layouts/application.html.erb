@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "RailsProjectLvl2" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Collective Blog" %></title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "RailsProjectLvl2" %>">
@@ -16,8 +16,13 @@
   <body>
     <%= render partial: 'layouts/header' %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice.present? %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+
+    <% if alert.present? %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
     <main role="main">
       <div class="container">
