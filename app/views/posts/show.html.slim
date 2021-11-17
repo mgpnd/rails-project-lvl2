@@ -1,3 +1,9 @@
-h2= @post.title
+.post
+  h2.post-title= @post.title
 
-p= @post.body
+  .post-body= @post.body
+
+  .post-footer
+    | #{@post.created_at.strftime('%d.%m.%Y %H:%M')} #{@post.creator.email}
+
+  = render partial: 'posts/comments', locals: { post: @post, new_comment: @comment }

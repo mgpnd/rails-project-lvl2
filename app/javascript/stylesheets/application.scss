@@ -12,3 +12,40 @@
 .new_user {
   width: 400px;
 }
+
+a.black-link {
+  color: black;
+  text-decoration: none;
+}
+
+.post {
+  .post-body {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
+  .post-footer {
+    color: gray;
+    margin-bottom: 40px;
+    text-align: right;
+    width: 100%;
+  }
+
+  .post-comments {
+    .comment {
+      padding: 8px;
+      width: fit-content;
+
+      .comment-header {
+        color: gray;
+        font-style: italic;
+        margin-top: 6px;
+      }
+    }
+
+    .comment-form {
+      margin-top: 40px;
+    }
+  }
+}
