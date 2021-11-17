@@ -32,20 +32,27 @@ a.black-link {
     width: 100%;
   }
 
-  .post-comments {
-    .comment {
-      padding: 8px;
-      width: fit-content;
+  .post-comment-form {
+    margin-top: 40px;
+  }
+}
 
-      .comment-header {
-        color: gray;
-        font-style: italic;
-        margin-top: 6px;
-      }
-    }
+.comment {
+  padding: 8px;
+  width: fit-content;
 
-    .comment-form {
-      margin-top: 40px;
-    }
+  .comment-reply-form {
+    margin-left: 0;
+  }
+
+  .comment-header {
+    color: gray;
+    font-style: italic;
+    margin-top: 6px;
+  }
+
+  .comment-children {
+    border-left: 1px solid #AAA;
+    padding-left: 8px;
   }
 }

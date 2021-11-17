@@ -13,6 +13,7 @@ module Posts
         redirect_to post
       else
         @comment = comment
+        flash.now[:alert] = comment.errors.to_a.first
         render 'posts/show'
       end
     end
@@ -20,7 +21,7 @@ module Posts
     private
 
     def comment_params
-      params.require(:post_comment).permit(:content)
+      params.require(:post_comment).permit(:content, :parent_id)
     end
   end
 end
