@@ -7,5 +7,4 @@ Rails.application.routes.draw do
   resources :posts, only: %i[show new create] do
     resources :comments, module: :posts, only: %i[create]
   end
-
 end

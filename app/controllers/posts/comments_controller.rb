@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Posts
   class CommentsController < BaseController
     before_action :authenticate_user!, only: %i[create]
 
     def create
-      comment = Post::Comment.new(
+      comment = PostComment.new(
         post: post,
         author: current_user,
         **comment_params
