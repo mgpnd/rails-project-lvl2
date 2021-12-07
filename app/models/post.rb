@@ -8,4 +8,5 @@ class Post < ApplicationRecord
   belongs_to :creator, class_name: 'User', optional: false
 
   has_many :comments, class_name: 'PostComment', inverse_of: :post, dependent: :destroy
+  has_many :likes, class_name: 'PostLike', inverse_of: :post, dependent: :destroy
 end

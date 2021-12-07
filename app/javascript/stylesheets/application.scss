@@ -1,4 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
 
 .invalid-feedback {
@@ -26,10 +28,18 @@ a.black-link {
   }
 
   .post-footer {
-    color: gray;
+    display: flex;
+    justify-content: flex-end;
     margin-bottom: 40px;
-    text-align: right;
     width: 100%;
+
+    div:not(:last-of-type) {
+      margin-right: 10px;
+    }
+
+    .creator-info {
+      color: gray;
+    }
   }
 
   .post-comment-form {

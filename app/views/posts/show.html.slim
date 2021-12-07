@@ -4,7 +4,23 @@
   .post-body= @post.body
 
   .post-footer
-    | #{@post.created_at.strftime('%d.%m.%Y %H:%M')} #{@post.creator.email}
+    .creator-info
+      | #{@post.created_at.strftime('%d.%m.%Y %H:%M')} #{@post.creator.email}
+
+    .like-icon
+      - if user_signed_in?
+        - if @current_user_like.present?
+          a.link-primary href="#{destroy_post_likes_path(post_id: @post.id)}" data-method="delete"
+            i.fa.fa-thumbs-up aria-hidden="true"
+        - else
+          a.link-secondary href="#{post_likes_path(post_id: @post.id)}" data-method="post"
+            i.fa.fa-thumbs-up aria-hidden="true"
+      - else
+        i.fa.fa-thumbs-up aria-hidden="true"
+
+    .likes-count
+      = @likes_count
+
 
 
   .post-comments
