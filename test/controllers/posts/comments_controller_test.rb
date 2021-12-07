@@ -17,8 +17,8 @@ class PostsCommentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
 
     comment = PostComment.find_by(attributes)
-    assert comment.present?
-    assert_equal comment.user, user
-    assert_equal comment.post, post
+    assert { comment.present? }
+    assert { comment.user == user }
+    assert { comment.post == post }
   end
 end

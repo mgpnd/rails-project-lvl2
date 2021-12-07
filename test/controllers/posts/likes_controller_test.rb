@@ -15,9 +15,9 @@ class PostLikesControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
 
     like = PostLike.find_by(user: @user, post: @post)
-    assert like.present?
-    assert_equal like.user, @user
-    assert_equal like.post, @post
+    assert { like.present? }
+    assert { like.user == @user }
+    assert { like.post == @post }
   end
 
   test '#destroy' do
@@ -27,6 +27,6 @@ class PostLikesControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
 
     missing_like = PostLike.find_by(user: @user, post: @post)
-    assert_not missing_like.present?
+    assert { missing_like.nil? }
   end
 end

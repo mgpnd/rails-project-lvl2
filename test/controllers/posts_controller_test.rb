@@ -28,7 +28,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
 
     post = Post.find_by(attributes)
-    assert post.present?
-    assert_equal post.creator, user
+    assert { post.present? }
+    assert { post.creator == user }
   end
 end
