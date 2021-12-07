@@ -21,9 +21,9 @@ class PostLikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test '#destroy' do
-    PostLike.create(user: @user, post: @post)
+    like = PostLike.create(user: @user, post: @post)
 
-    delete destroy_post_likes_path(post_id: @post.id)
+    delete post_like_path(id: like.id, post_id: @post.id)
     assert_response :redirect
 
     missing_like = PostLike.find_by(user: @user, post: @post)

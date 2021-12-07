@@ -10,7 +10,7 @@
     .like-icon
       - if user_signed_in?
         - if @current_user_like.present?
-          a.link-primary href="#{destroy_post_likes_path(post_id: @post.id)}" data-method="delete"
+          a.link-primary href="#{post_like_path(id: @current_user_like.id, post_id: @post.id)}" data-method="delete"
             i.fa.fa-thumbs-up aria-hidden="true"
         - else
           a.link-secondary href="#{post_likes_path(post_id: @post.id)}" data-method="post"
