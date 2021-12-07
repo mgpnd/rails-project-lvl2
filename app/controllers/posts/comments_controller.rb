@@ -7,7 +7,7 @@ module Posts
     def create
       comment = PostComment.new(
         post: post,
-        author: current_user,
+        user: current_user,
         **comment_params
       )
 

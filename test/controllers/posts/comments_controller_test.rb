@@ -8,7 +8,7 @@ class PostsCommentsControllerTest < ActionDispatch::IntegrationTest
     post = FactoryBot.create(:post)
     attributes = FactoryBot.attributes_for(
       :post_comment,
-      author: user,
+      user: user,
       post: post
     )
 
@@ -18,7 +18,7 @@ class PostsCommentsControllerTest < ActionDispatch::IntegrationTest
 
     comment = PostComment.find_by(attributes)
     assert comment.present?
-    assert_equal comment.author, user
+    assert_equal comment.user, user
     assert_equal comment.post, post
   end
 end

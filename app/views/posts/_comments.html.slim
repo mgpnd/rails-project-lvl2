@@ -1,7 +1,7 @@
 - comments.each do |comment|
   .comment
     .comment-header
-      strong= comment.author.email
+      strong= comment.user.email
       | &nbsp;
       = comment.created_at.strftime('%d.%m.%Y %H:%M')
       | &nbsp;
