@@ -4,7 +4,7 @@ h1 Welcome to the Blog!
   .card.mt-4.w-100
     .card-body
       h4.card-title
-        = link_to post.title, post, class: 'black-link', target: '_blank'
-      p.card-text= post.body
+        = link_to post.title, post, class: 'black-link', target: '_blank', rel: 'noopener'
+      p.card-text = post.body
     .card-footer
       | #{post.created_at.strftime('%d.%m.%Y %H:%M')} #{post.creator.email}

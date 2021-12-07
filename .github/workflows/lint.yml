@@ -27,5 +27,5 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Run RuboCop
+    - name: Run RuboCop & slim-lint
       run: make lint

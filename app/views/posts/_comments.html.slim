@@ -1,7 +1,7 @@
 - comments.each do |comment|
   .comment
     .comment-header
-      strong= comment.user.email
+      strong = comment.user.email
       | &nbsp;
       = comment.created_at.strftime('%d.%m.%Y %H:%M')
       | &nbsp;
@@ -29,5 +29,5 @@
         = render partial: 'posts/comments',
                  locals: { \
                    comments: comment.children,
-                   post: post,
+                   post: post \
                  }
