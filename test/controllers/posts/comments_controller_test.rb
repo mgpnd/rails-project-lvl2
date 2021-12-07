@@ -1,0 +1,24 @@
+# frozen_string_literal: true
+
+require 'test_helper'
+
+class PostsCommentsControllerTest < ActionDispatch::IntegrationTest
+  test '#create' do
+    user = FactoryBot.create(:user)
+    post = FactoryBot.create(:post)
+    attributes = FactoryBot.attributes_for(
+      :post_comment,
+      author: user,
+      post: post
+    )
+
+    sign_in user
+    post post_comments_path(post_id: post.id), params: { post_comment: attributes }
+    assert_response :redirect
+
+    comment = Post::Comment.find_by(attributes)
+    assert comment.present?
+    assert_equal comment.author, user
+    assert_equal comment.post, post
+  end
+end
