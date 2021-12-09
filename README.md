@@ -3,6 +3,10 @@
 
 Heroku: [https://hexlet-rails-project-lvl2.herokuapp.com](https://hexlet-rails-project-lvl2.herokuapp.com)
 
+# Installation
+```sh
+make setup
+```
 # Development
 
 Run tests:
@@ -20,5 +24,10 @@ make lint
 Run server
 
 ```sh
-rails s
+make server
+```
+
+Run console
+```sh
+make console
 ```
