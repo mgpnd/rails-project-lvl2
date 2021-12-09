@@ -4,12 +4,12 @@ require 'test_helper'
 
 class PostsCommentsControllerTest < ActionDispatch::IntegrationTest
   test '#create' do
-    user = FactoryBot.create(:user)
-    post = FactoryBot.create(:post)
+    user = users(:first)
+    post = posts(:first)
     attributes = FactoryBot.attributes_for(
       :post_comment,
-      user: user,
-      post: post
+      user_id: user.id,
+      post_id: post.id
     )
 
     sign_in user

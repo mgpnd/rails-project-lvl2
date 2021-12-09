@@ -8,6 +8,8 @@ require 'rails/test_help'
 
 module ActiveSupport
   class TestCase
+    fixtures :all
+
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)
   end

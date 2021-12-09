@@ -4,14 +4,14 @@ require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
   test '#show' do
-    post = FactoryBot.create(:post)
+    post = posts(:first)
 
     get post_path(post)
     assert_response :success
   end
 
   test '#new' do
-    user = FactoryBot.create(:user)
+    user = users(:first)
     sign_in user
 
     get new_post_path
@@ -19,8 +19,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test '#create' do
-    user = FactoryBot.create(:user)
-    category = FactoryBot.create(:post_category)
+    user = users(:first)
+    category = post_categories(:media)
     attributes = FactoryBot.attributes_for(:post, post_category_id: category.id)
     sign_in user
 

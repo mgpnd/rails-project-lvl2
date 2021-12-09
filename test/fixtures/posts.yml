@@ -1,0 +1,11 @@
+first:
+  title: 'Technology was a mistake'
+  body: 'No doubts'
+  post_category: technology
+  creator: first
+
+second:
+  title: 'Media was a mistake'
+  body: 'Definitely no doubts'
+  post_category: media
+  creator: second

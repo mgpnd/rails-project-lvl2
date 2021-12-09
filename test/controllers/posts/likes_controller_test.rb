@@ -4,8 +4,8 @@ require 'test_helper'
 
 class PostLikesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = FactoryBot.create(:user)
-    @post = FactoryBot.create(:post)
+    @user = users(:first)
+    @post = posts(:first)
 
     sign_in @user
   end
