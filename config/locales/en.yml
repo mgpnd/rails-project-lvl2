@@ -1,33 +1,38 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  helpers:
+    submit:
+      post_comment:
+        create: 'Add comment'
+
+  simple_form:
+    labels:
+      post:
+        post_category_id: 'Category'
+    placeholders:
+      post_comment:
+        content: 'Write a comment...'
+
+  time:
+    formats:
+      default: '%d.%m.%Y %H:%M'
+
+  views:
+    header:
+      links:
+        create_post: Create Post
+        sign_in: Sign In
+        sign_out: Sign Out
+        sign_up: Sign Up
+      title: Collective Blog
+
+    page:
+      title: Collective Blog
+      description: RailsProjectLvl2
+
+    welcome: Welcome to the Blog!
+
+    posts:
+      comments:
+        reply: Reply
+      new:
+        title: Create new post

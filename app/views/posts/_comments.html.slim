@@ -3,10 +3,10 @@
     .comment-header
       strong = comment.user.email
       | &nbsp;
-      = comment.created_at.strftime('%d.%m.%Y %H:%M')
+      = I18n.l(comment.created_at)
       | &nbsp;
       button.btn.btn-link data-bs-toggle="collapse" data-bs-target="#reply-form-#{comment.id}"
-        | Reply
+        = t('views.posts.comments.reply')
 
     .comment-body
       = comment.content
@@ -19,10 +19,9 @@
         = f.input :parent_id, as: :hidden, wrapper_html: { class: 'form-group' }
         = f.input :content,
                   as: :text,
-                  placeholder: 'Write a reply...',
                   label: false,
                   input_html: { rows: 1, required: true }
-        = f.button :submit, value: 'Reply', class: 'btn btn-sm btn-primary'
+        = f.button :submit, value: t('views.posts.comments.reply'), class: 'btn btn-sm btn-primary'
 
     - if comment.children.present?
       .comment-children

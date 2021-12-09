@@ -1,4 +1,4 @@
-h1 Welcome to the Blog!
+h1 = t('views.welcome')
 
 - @posts.each do |post|
   .card.mt-4.w-100
@@ -7,4 +7,4 @@ h1 Welcome to the Blog!
         = link_to post.title, post, class: 'black-link', target: '_blank', rel: 'noopener'
       p.card-text = post.body
     .card-footer
-      | #{post.created_at.strftime('%d.%m.%Y %H:%M')} #{post.creator.email}
+      | #{I18n.l(post.created_at)} #{post.creator.email}

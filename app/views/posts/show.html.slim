@@ -5,7 +5,7 @@
 
   .post-footer
     .creator-info
-      | #{@post.created_at.strftime('%d.%m.%Y %H:%M')} #{@post.creator.email}
+      | #{I18n.t(@post.created_at)} #{@post.creator.email}
 
     .like-icon
       - if user_signed_in?
@@ -31,7 +31,6 @@
     = simple_form_for PostComment.new, url: post_comments_path(post_id: @post.id), method: 'POST' do |f|
       = f.input :content,
                 as: :text,
-                placeholder: 'Write a comment...',
                 label: false
 
       .float-end
